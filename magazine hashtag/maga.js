@@ -60,17 +60,18 @@ const catalago = [
     nomearquivoimagem: 'moleton02.jpg'
 }] 
 
-for(var i = 0; i < 4; i++ ){
+for( const produtocatalago of catalago ){
+
+
 const cartaoproduto = 
 `<img 
-src="../${catalago[i].nomearquivoimagem}" 
+src="../${produtocatalago.nomearquivoimagem}" 
 alt="produto 1 do magazine hashtag"/>
 
-<P>${catalago[i].marca}</P>
-<P>${catalago[i].nome}</P>
-<P>$${catalago[i].preço}</P>
+<P>${produtocatalago.marca}</P>
+<P>${produtocatalago.nome}</P>
+<P>$${produtocatalago.preço}</P>
 <input type="button" id="add" value="adicionar" onclick="carrinho()">`;
 
-document.getElementById("container-produto").innerHTML += cartaoproduto
-
+document.getElementById("container-produto").innerHTML += `${cartaoproduto}`
 }
