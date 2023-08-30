@@ -40,7 +40,7 @@
 
 }
 
-#container-produto{
+#container-produto ,#container-produto01 {
     padding: 16px 20px;
     
 }
@@ -48,7 +48,7 @@
 
 
 
-#container-produto img{
+#container-produto img ,#container-produto01 img{
     height: 300px;
     margin-top: 20px;
     
@@ -58,10 +58,10 @@
 
 }
 
-#container-produto p ,input{
+#container-produto p ,input , #container-produto01 p {
     margin-top: 5px; 
      display: flex;
-   width: 10%;
+   width: 100%;
    
    margin-top: 0px;
  
@@ -74,7 +74,11 @@ input{
     height: 20px;
 }
 
-
+.corpo{
+    display: flex;
+    width: 50%;
+   /* background-color: blue;*/
+}
 
 
 

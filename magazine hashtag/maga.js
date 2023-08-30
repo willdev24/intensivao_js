@@ -30,7 +30,7 @@ const produto4 = {
 // vc pode jogar diretamente ou so jogar as variaveis
 //irei jogar direto, nesse caso as informaçoes ja ficam tudo dentro do vetor 
 
-const catalago = [ 
+const catalago = [ //coluna01
     {
     id: 1,
     nome:"casaco branco",
@@ -58,14 +58,47 @@ const catalago = [
     marca: 'zara',
     preço: 130,
     nomearquivoimagem: 'moleton02.jpg'
-}] 
+}]
 
-for( const produtocatalago of catalago ){
+const catalagotenis = [ //coluna02
+{
+    id: 5,
+    nome:"tenis",
+    marca: 'zara',
+    preço: 230,
+    nomearquivoimagem: 't01.jpg'
+},
+{
+    id: 6,
+    nome:"tenis ",
+    marca: 'zara',
+    preço: 190,
+    nomearquivoimagem: 't02.jpg'
+},
+{
+    id: 7,
+    nome:"tenis",
+    marca: 'zara',
+    preço: 240,
+    nomearquivoimagem: 't03.jpg'
+},
+{
+    id: 8,
+    nome:"tenis",
+    marca: 'zara',
+    preço: 330,
+    nomearquivoimagem: 't04.jpg'
+}
+
+]
+
+
+for( const produtocatalago of catalago ){ //coluna1
 
 
 const cartaoproduto = 
-`<img 
-src="../${produtocatalago.nomearquivoimagem}" 
+
+`<img src="../${produtocatalago.nomearquivoimagem}" 
 alt="produto 1 do magazine hashtag"/>
 
 <P>${produtocatalago.marca}</P>
@@ -75,3 +108,19 @@ alt="produto 1 do magazine hashtag"/>
 
 document.getElementById("container-produto").innerHTML += `${cartaoproduto}`
 }
+
+for( const produtocatalago of catalagotenis ){ //coluna 2
+
+
+    const cartaoproduto01 = 
+    
+    `<img src="../${produtocatalago.nomearquivoimagem}" 
+    alt="produto 1 do magazine hashtag"/>
+    
+    <P>${produtocatalago.marca}</P>
+    <P>${produtocatalago.nome}</P>
+    <P>$${produtocatalago.preço}</P>
+    <input type="button" id="add" value="adicionar" onclick="carrinho()">`;
+    
+    document.getElementById("container-produto01").innerHTML += `${cartaoproduto01}`
+    }
