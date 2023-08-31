@@ -8,18 +8,36 @@
 
     <link rel="stylesheet" href="magazine.css">
 <link rel="stylesheet" href="corpo.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  </head>
+</head>
   <body>
-   
+   <section  id="carrinhoo" class=" bg-cyan-600 fixed top-0 right-0 h-screen w-[340px] text-slate-100 ">
+
+  <div class="flex justify-between text-slate-100">
+  <p class="m-2">menu carrinho</p>
+  <button id="fechar-carrinho"><i class="fa-solid fa-rectangle-xmark m-2"></i></button>
+  </div>
+
+  <section class="m-2">
+    <p>produto1</p>
+    <p>produto2</p>
+    <p>produto3</p>
+  </section>
+
+  <p class="m-2" id="preço-total">$200</p>
+  <button class="m-2">finalizar compra</button>
+  
+</section>
+
     <header class="flex bg-cyan-600  justify-between items-end  ">
     <img class="h-20 p-0" src="./logomagazine.png" alt="logo da magazine">
       
         <h1 class=" text-2xl m-8 text-zinc-50 ">Magazine hashtag</h1> 
 
         <div class="flex m-4 text-zinc-50 text-xl  ">
-          <input class="m-4" type="button" value="historico" onclick="historico()">
-          <input class="m-4" type="button" value="carrinho" onclick="carrinho()">
+         <button class="m-2" onclick="histotico()"><i class="fa-solid fa-user"></i></button>
+          <button class="m-2" onclick="carrinho()"><i class="fa-solid fa-cart-shopping"></i></button>
         </div>
     </header>
 
