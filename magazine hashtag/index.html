@@ -7,33 +7,29 @@
     <title>Vite App</title>
 
     <link rel="stylesheet" href="magazine.css">
+<link rel="stylesheet" href="corpo.css">
+
   </head>
   <body>
    
-    <header>
+    <header class="flex bg-cyan-600  justify-between items-end  ">
+    <img class="h-20 p-0" src="./logomagazine.png" alt="logo da magazine">
+      
+        <h1 class=" text-2xl m-8 text-zinc-50 ">Magazine hashtag</h1> 
 
-      <div class="container">
-        <h1>Magazine hashtag</h1> 
-
-        <nav>
-         <ul>
-
-           <li><a href=""> home1</a></li>
-           <li><a href="">home2</a></li>
-           <li><a href="">home3</a></li>
-           <li><a href="">home4</a></li>
-
-         </ul>
-        </nav></div>    
+        <div class="flex m-4 text-zinc-50 text-xl  ">
+          <input class="m-4" type="button" value="historico" onclick="historico()">
+          <input class="m-4" type="button" value="carrinho" onclick="carrinho()">
+        </div>
     </header>
 
  <main>
   <div class="corpo">
-    <section id="container-produto">
-      
+    <section id="container-produto" class="flex  flex-wrap">     
+   
     </section>
     
-    <section id="container-produto01">
+    <section id="container-produto01" class="flex" >
       
     </section>
   </div> 

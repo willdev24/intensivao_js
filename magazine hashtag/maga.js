@@ -96,15 +96,15 @@ const catalagotenis = [ //coluna02
 for( const produtocatalago of catalago ){ //coluna1
 
 
-const cartaoproduto = 
-
-`<img src="../${produtocatalago.nomearquivoimagem}" 
+const cartaoproduto = `<div class='border-solid border-2 border-indigo-600 w-48 m-2 ' id="card-produto-${produtocatalago.id}"> 
+<img  src="./${produtocatalago.nomearquivoimagem} " 
 alt="produto 1 do magazine hashtag"/>
 
 <P>${produtocatalago.marca}</P>
 <P>${produtocatalago.nome}</P>
 <P>$${produtocatalago.preço}</P>
-<input type="button" id="add" value="adicionar" onclick="carrinho()">`;
+<input type="button" id="add" value="adicionar" onclick="carrinho()">
+</div>`;
 
 document.getElementById("container-produto").innerHTML += `${cartaoproduto}`
 }
@@ -112,15 +112,15 @@ document.getElementById("container-produto").innerHTML += `${cartaoproduto}`
 for( const produtocatalago of catalagotenis ){ //coluna 2
 
 
-    const cartaoproduto01 = 
-    
-    `<img src="../${produtocatalago.nomearquivoimagem}" 
+    const cartaoproduto01 = `<div class='border-solid border-2 border-indigo-600 w-48 m-2'  id="card-produto- ${produtocatalago.id}">
+    <img src="./${produtocatalago.nomearquivoimagem}" 
     alt="produto 1 do magazine hashtag"/>
     
     <P>${produtocatalago.marca}</P>
     <P>${produtocatalago.nome}</P>
     <P>$${produtocatalago.preço}</P>
-    <input type="button" id="add" value="adicionar" onclick="carrinho()">`;
+    <input type="button" id="add" value="adicionar" onclick="carrinho()">
+    </div>`;
     
     document.getElementById("container-produto01").innerHTML += `${cartaoproduto01}`
     }
