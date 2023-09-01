@@ -30,7 +30,9 @@ const produto4 = {
 // vc pode jogar diretamente ou so jogar as variaveis
 //irei jogar direto, nesse caso as informaçoes ja ficam tudo dentro do vetor 
 
-const catalago = [ //coluna01
+import { inicializarcarrinho } from "./carrinho_compras"; //importando a function do carrinho para ser executada aq
+
+const catalago = [ // dados da primeira section que estao dentro do vetor catalago
     {
     id: 1,
     nome:"casaco branco",
@@ -60,7 +62,7 @@ const catalago = [ //coluna01
     nomearquivoimagem: 'moleton02.jpg'
 }]
 
-const catalagotenis = [ //coluna02
+const catalagotenis = [ //section 2
 {
     id: 5,
     nome:"tenis",
@@ -93,27 +95,29 @@ const catalagotenis = [ //coluna02
 ]
 
 
-for( const produtocatalago of catalago ){ //coluna1
-
-
+for( const produtocatalago of catalago ){ //section 1, aq o ciclo de repetiçao irar executar tudo que estiver dentro de catalago 
+                                            // de aordo com a quantidade de cada vetor
+                                            
+// aq foi criado uma const para receber todas essa informaçoes e jogar na tela 
 const cartaoproduto = `<div class='border-solid border-2 border-indigo-600 w-48 m-2 ' id="card-produto-${produtocatalago.id}"> 
-<img  src="./${produtocatalago.nomearquivoimagem} " 
+
+<img  src="./midia/${produtocatalago.nomearquivoimagem} " 
 alt="produto 1 do magazine hashtag"/>
 
 <P>${produtocatalago.marca}</P>
 <P>${produtocatalago.nome}</P>
 <P>$${produtocatalago.preço}</P>
 <input type="button" id="add" value="adicionar" onclick="carrinho()">
-</div>`;
+</div>`;  // dentro dessa div entre crase é criado a imagem, os <p> , os id, dos produtos que sao direcionados de dentro do vetor catalago onde seria o nosso "banco de dados
 
-document.getElementById("container-produto").innerHTML += `${cartaoproduto}`
-}
+document.getElementById("container-produto").innerHTML += `${cartaoproduto}` // com as informaçoes ja adicionadas no cartao produto
+}                                                                            // É feito o innerhtml na primeira section entao o ciclo de repetiçao cheagar no final do veotr catalago
 
 for( const produtocatalago of catalagotenis ){ //coluna 2
 
 
     const cartaoproduto01 = `<div class='border-solid border-2 border-indigo-600 w-48 m-2'  id="card-produto- ${produtocatalago.id}">
-    <img src="./${produtocatalago.nomearquivoimagem}" 
+    <img src="./midia/${produtocatalago.nomearquivoimagem}" 
     alt="produto 1 do magazine hashtag"/>
     
     <P>${produtocatalago.marca}</P>
@@ -124,3 +128,7 @@ for( const produtocatalago of catalagotenis ){ //coluna 2
     
     document.getElementById("container-produto01").innerHTML += `${cartaoproduto01}`
     }
+
+
+inicializarcarrinho() // executar os comando feito pelo carrinho feito no carrinho_compras 
+    

@@ -1,59 +1,66 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
 
-    <link rel="stylesheet" href="magazine.css">
-<link rel="stylesheet" href="corpo.css">
+    <link rel="stylesheet" href="magazine.css"> <!--css puro, ta desabilitado nesse projeto-->
+<link rel="stylesheet" href="corpo.css"> <!--link do css feito com o framwork tailwindcss-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<!--o link á cima é para poder adicionar logos de objetos do font awesome-->
 </head>
-  <body>
-   <section  id="carrinhoo" class=" bg-cyan-600 fixed top-0 right-0 h-screen w-[340px] text-slate-100 ">
+
+<body>
+   <!--inicio da section carrinho-->
+  <section  id="carrinhoo" class=" bg-cyan-600 fixed top-0 right-[-350px] h-screen w-[340px] text-slate-100 duration-500  border-l  border-slate-100"  >
 
   <div class="flex justify-between text-slate-100">
   <p class="m-2">menu carrinho</p>
-  <button id="fechar-carrinho"><i class="fa-solid fa-rectangle-xmark m-2"></i></button>
+  <button id="fecharcarrinho"><i class="fa-solid fa-rectangle-xmark m-2"  ></i></button>
   </div>
 
   <section class="m-2">
     <p>produto1</p>
     <p>produto2</p>
     <p>produto3</p>
-  </section>
+  </section> 
 
   <p class="m-2" id="preço-total">$200</p>
   <button class="m-2">finalizar compra</button>
   
-</section>
+</section><!--fim da section carrinho-->
 
-    <header class="flex bg-cyan-600  justify-between items-end  ">
-    <img class="h-20 p-0" src="./logomagazine.png" alt="logo da magazine">
+    <header class="flex bg-cyan-600  justify-between items-end  "> <!--inicio do cabeçalho da minha ecomerci-->
+     <img class="h-20 p-0" src="./midia/logomagazine.png" alt="logo da magazine"> 
       
         <h1 class=" text-2xl m-8 text-zinc-50 ">Magazine hashtag</h1> 
 
         <div class="flex m-4 text-zinc-50 text-xl  ">
-         <button class="m-2" onclick="histotico()"><i class="fa-solid fa-user"></i></button>
-          <button class="m-2" onclick="carrinho()"><i class="fa-solid fa-cart-shopping"></i></button>
-        </div>
-    </header>
-
- <main>
-  <div class="corpo">
-    <section id="container-produto" class="flex  flex-wrap">     
-   
-    </section>
-    
-    <section id="container-produto01" class="flex" >
+            <button class="m-2" id="historico"> 
+              <i class="fa-solid fa-user"></i>
+            </button>
       
-    </section>
-  </div> 
+            <button class="m-2" id="abrircarrinho">
+              <i class="fa-solid fa-cart-shopping"></i>
+           </button> 
+      </div>
+   </header> <!--fimm do cabeçalho da minha ecomerci-->
+
+ <main> <!--inicio do corpo do programa-->
+
+      <div class="corpo">
+        <section id="container-produto" class="flex  flex-wrap">  <!-- primeira section de produtos que ta armazenada no main.js-->   
+        </section>
+        
+        <section id="container-produto01" class="flex" ><!-- segunda section de produtos que ta armazenada no main.js-->  
+       </section>
+     </div> 
+
  </main>   
  
- <script src="maga.js"></script>
+ <script type="module" src="maga.js"></script> <!--script principal do programa-->
  
 </body>
 </html>
