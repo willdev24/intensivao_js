@@ -14,21 +14,19 @@
 
 <body>
    <!--inicio da section carrinho-->
-  <section  id="carrinhoo" class=" bg-cyan-600 fixed top-0 right-[-350px] h-screen w-[340px] text-slate-100 duration-500  border-l  border-slate-100"  >
+  <section  id="carrinhoo" class=" flex flex-col p-5 justify-between bg-cyan-600 fixed top-0 right-[-350px] h-screen w-[340px] text-slate-100 duration-500  border-l  border-slate-100  " >
 
-  <div class="flex justify-between text-slate-100">
-  <p class="m-2">menu carrinho</p>
-  <button id="fecharcarrinho"><i class="fa-solid fa-rectangle-xmark m-2"  ></i></button>
+  <div class=" flex justify-between text-slate-100">
+  <p class="text-[25px]">menu carrinho</p>
+  <button id="fecharcarrinho"><i class="fa-solid fa-rectangle-xmark hover:text-slate-800"  ></i></button>
   </div>
 
-  <section class="m-2">
-    <p>produto1</p>
-    <p>produto2</p>
-    <p>produto3</p>
+  <section id="produtos-adicionados" class="">
+  
   </section> 
 
-  <p class="m-2" id="preço-total">$200</p>
-  <button class="m-2">finalizar compra</button>
+  <p class="" id="preço-total">$200</p>
+  <button class=" bg-emerald-400	p-4 text-[20px] hover:text-slate-400">finalizar compra</button>
   
 </section><!--fim da section carrinho-->
 
@@ -39,11 +37,11 @@
 
         <div class="flex m-4 text-zinc-50 text-xl  ">
             <button class="m-2" id="historico"> 
-              <i class="fa-solid fa-user"></i>
+              <i class="fa-solid fa-user hover:text-slate-800" ></i>
             </button>
       
             <button class="m-2" id="abrircarrinho">
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i class="fa-solid fa-cart-shopping hover:text-slate-800"></i>
            </button> 
       </div>
    </header> <!--fimm do cabeçalho da minha ecomerci-->
