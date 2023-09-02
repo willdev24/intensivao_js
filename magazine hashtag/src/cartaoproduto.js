@@ -1,6 +1,6 @@
 import { catalago } from "./ultilitarios";
 import { catalagotenis } from "./ultilitarios";
-import { adicionarprodutocarrinho } from "./carrinho_compras";
+
 
 export function redenrizarcatalago(){
     for( const produtocatalago of catalago ){ //section 1, aq o ciclo de repetiçao irar executar tudo que estiver dentro de catalago 
@@ -18,15 +18,12 @@ export function redenrizarcatalago(){
     <P class="text-sm" >${produtocatalago.nome}</P>
     <P class="text-lime-500 text-sm">$${produtocatalago.preço}</P>
     </div>
-    <button class=" rounded-lg  bg-emerald-400  m-0.5 px-[60px] text-slate-100  hover:text-sky-600"  id="adicionar-${produtocatalago.id}"> adicionar</button>
+    <button id="adicionar" class=" rounded-lg  bg-emerald-400  m-0.5 px-[60px] text-slate-100  hover:text-sky-600"  > adicionar</button>
     </div>`;  // dentro dessa div entre crase é criado a imagem, os <p> , os id, dos produtos que sao direcionados de dentro do vetor catalago onde seria o nosso "banco de dados
     
     document.getElementById("container-produto").innerHTML += `${cartaoproduto}` // com as informaçoes ja adicionadas no cartao produto
     } 
     
-    for (const produtocatalago of catalago){
-        document.getElementById(`adicionar-${produtocatalago.i}`).addEventListener('click', adicionarprodutocarrinho)
-       }
         
     // É feito o innerhtml na primeira section entao o ciclo de repetiçao cheagar no final do veotr catalago
     }
@@ -46,7 +43,7 @@ export function redenrizarcatalago(){
             <P class="text-sm">${produtocatalago.nome}</P>
             <P class="text-lime-500  text-sm">$${produtocatalago.preço}</P>
             </div>
-            <button class=" rounded-lg bg-emerald-400  m-0.5 px-[60px] text-slate-100  hover:text-sky-600"  id="add02-${produtocatalago.id}"> adicionar</button>
+            <button id="add02-${produtocatalago.id}" class=" rounded-lg bg-emerald-400  m-0.5 px-[60px] text-slate-100  hover:text-sky-600"  > adicionar</button>
         
             </div>`;
             

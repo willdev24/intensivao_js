@@ -1,4 +1,6 @@
-  function opencarrinho(){
+import { redenrizarcatalago } from "./cartaoproduto"
+const cat = redenrizarcatalago()
+function opencarrinho(){
     
     document.getElementById('carrinhoo').classList.add('right-[0px]')  //o right move a sectioin para dentro e para fora da pagna , onde o numero positivo fica dentro
     document.getElementById('carrinhoo').classList.remove('right-[-350px]')// ja o negativo, fica fora
@@ -48,7 +50,7 @@ const cartaoprodutocar = ` <article class="shadow-xl shadow-slate-400  group fle
 
 export function iniciaradicao(){
 
-    const adicionar = document.getElementById('add')
+    const adicionar = document.getElementById(`adicionar`)
 
     adicionar.addEventListener('click',adicionarprodutocarrinho)
     const adicionar02 = document.getElementById('add02')
