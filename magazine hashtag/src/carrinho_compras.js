@@ -21,13 +21,13 @@ botaoabrircarrinho.addEventListener(  'click', opencarrinho)
 botaofecharcarrinho.addEventListener( 'click', exitcarrinho)
 }
 
-import { catalago } from "./ultilitarios"
+
 
 function adicionarprodutocarrinho(){
 
 const containerprodutos = document.getElementById('produtos-adicionados')
 
-const cartaoprodutocar = ` <article class="flex p-1  bg-cyan-50  relative rounded-lg my-2" >
+const cartaoprodutocar = ` <article class="shadow-xl shadow-slate-400  group flex p-1  bg-cyan-50  relative rounded-lg my-2" >
 <button id="retirarcompra" class="absolute top-0 right-2">
   <i class="fa-solid fa-rectangle-xmark text-slate-800  hover:text-slate-400 "  ></i>
 </button>
