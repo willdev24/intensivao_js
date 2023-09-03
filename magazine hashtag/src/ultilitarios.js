@@ -9,7 +9,7 @@ export const catalago = [ // dados da primeira section que estao dentro do vetor
     nomearquivoimagem: 'moleton03.jpg'
 },
 {
-    id: 4,
+    id: 2,
     nome:"casaco blue",
     marca: 'zara',
     preço: 170,

@@ -1,5 +1,7 @@
 import { redenrizarcatalago } from "./cartaoproduto"
-const cat = redenrizarcatalago()
+import { catalago } from "./ultilitarios"
+
+
 function opencarrinho(){
     
     document.getElementById('carrinhoo').classList.add('right-[0px]')  //o right move a sectioin para dentro e para fora da pagna , onde o numero positivo fica dentro
@@ -25,7 +27,7 @@ botaofecharcarrinho.addEventListener( 'click', exitcarrinho)
 
 
 
-function adicionarprodutocarrinho(){
+export function adicionarprodutocarrinho(){
 
 const containerprodutos = document.getElementById('produtos-adicionados')
 
@@ -47,14 +49,15 @@ const cartaoprodutocar = ` <article class="shadow-xl shadow-slate-400  group fle
  containerprodutos.innerHTML += `${cartaoprodutocar}`
 
 }
-
+/*
 export function iniciaradicao(){
-
-    const adicionar = document.getElementById(`adicionar`)
-
-    adicionar.addEventListener('click',adicionarprodutocarrinho)
-    const adicionar02 = document.getElementById('add02')
+    for(const quantidade=0 ; quantidade <= catalago.length ; quantidade++  ){
+       
+      const adicionar = document.getElementById('add-product-button')
+          adicionar.addEventListener('click',adicionarprodutocarrinho)
+    }
+    const adicionar02 = document.getElementById('add-product-button')
 
     adicionar02.addEventListener('click',adicionarprodutocarrinho)
 
-}
+}*/
