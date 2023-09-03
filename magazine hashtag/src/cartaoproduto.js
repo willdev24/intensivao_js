@@ -1,6 +1,6 @@
 import { catalago } from "./ultilitarios";
 import { catalagotenis } from "./ultilitarios";
-import { adicionarprodutocarrinho } from "./carrinho_compras";
+import { adicionarprodutocarrinho, adicionarprodutocarrinho02 } from "./carrinho_compras";
 
 export function redenrizarcatalago(){
     for( const produtocatalago of catalago ){ //section 1, aq o ciclo de repetiçao irar executar tudo que estiver dentro de catalago 
@@ -72,7 +72,7 @@ export function redenrizarcatalago(){
 
             for( const produtocatalago of catalagotenis){
     
-            document.getElementById(`add02-${produtocatalago.id}`).addEventListener('click', () => adicionarprodutocarrinho(produtocatalago.id))
+            document.getElementById(`add02-${produtocatalago.id}`).addEventListener('click', () => adicionarprodutocarrinho02(produtocatalago.id))
             
                 }
             }
