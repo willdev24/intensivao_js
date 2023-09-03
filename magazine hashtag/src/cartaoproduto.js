@@ -33,7 +33,7 @@ export function redenrizarcatalago(){
 
         for( const produtocatalago of catalago){
 
-        document.getElementById(`add-${produtocatalago.id}`).addEventListener('click',adicionarprodutocarrinho)
+        document.getElementById(`add-${produtocatalago.id}`).addEventListener('click',() => adicionarprodutocarrinho(produtocatalago.id))
         
             }
 
@@ -72,7 +72,7 @@ export function redenrizarcatalago(){
 
             for( const produtocatalago of catalagotenis){
     
-            document.getElementById(`add02-${produtocatalago.id}`).addEventListener('click',adicionarprodutocarrinho)
+            document.getElementById(`add02-${produtocatalago.id}`).addEventListener('click', () => adicionarprodutocarrinho(produtocatalago.id))
             
                 }
             }

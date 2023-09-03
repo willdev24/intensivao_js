@@ -27,21 +27,23 @@ botaofecharcarrinho.addEventListener( 'click', exitcarrinho)
 
 
 
-export function adicionarprodutocarrinho(){
+export function adicionarprodutocarrinho(idproduto){
 
+const produto = catalago.find(p => p.id === idproduto) //vai pegar o produto do catalago pelo id que iremos passar da funçao addcarrinho
+//find = ache um produto p talque  esse produto tenha um id = ao recebido em  idproduto
 const containerprodutos = document.getElementById('produtos-adicionados')
 
 const cartaoprodutocar = ` <article class="shadow-xl shadow-slate-400  group flex p-1  bg-cyan-50  relative rounded-lg my-2" >
 <button id="retirarcompra" class="absolute top-0 right-2">
   <i class="fa-solid fa-rectangle-xmark text-slate-800  hover:text-slate-400 "  ></i>
 </button>
-<img class="h-[150px]  " src="./midia/moleton01.jpg" alt="moleton01">
+<img class="h-[150px]  " src="./midia/${produto.nomearquivoimagem}" alt="moleton01">
 
 <div class="p-5 text-slate-800" >
   <p>zara</p>
-  <p>casaco marron</p>
+  <p>${produto.nome}</p>
   <P class="text-slate-400">tamanho P</P> 
-  <p class="text-lime-500 h-[15px]">$70</p>
+  <p class="text-lime-500 h-[15px]">$${produto.preço}</p>
   
 </div>    
 </article>
