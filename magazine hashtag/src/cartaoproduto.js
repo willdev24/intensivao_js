@@ -24,21 +24,17 @@ export function redenrizarcatalago(){
 
     document.getElementById("container-produto").innerHTML += `${cartaoproduto}` // com as informaçoes ja adicionadas no cartao produto
     } 
-    
         
     // É feito o innerhtml na primeira section entao o ciclo de repetiçao cheagar no final do veotr catalago
     }
 
-   export function addcarrinho(){
+    export function addcarrinho(){
 
         for( const produtocatalago of catalago){
 
         document.getElementById(`add-${produtocatalago.id}`).addEventListener('click',() => adicionarprodutocarrinho(produtocatalago.id))
         
             }
-
-             
-        
         }
 
 

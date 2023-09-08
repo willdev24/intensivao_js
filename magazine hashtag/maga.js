@@ -9,8 +9,8 @@ import { inicializarcarrinho } from "./src/carrinho_compras"; //importando a fun
 import { addcarrinho } from "./src/cartaoproduto";
 import { addcarrinho02 } from "./src/cartaoproduto";
 
- redenrizarcatalago()
+redenrizarcatalago()
 renderizarcatalago02()
 inicializarcarrinho() // executar os comando feito pelo carrinho feito no carrinho_compras 
- addcarrinho()   
- addcarrinho02()
+addcarrinho()   
+addcarrinho02()
