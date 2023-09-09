@@ -35,6 +35,7 @@ export function redenrizarcatalago(){
         document.getElementById(`add-${produtocatalago.id}`).addEventListener('click',() => adicionarprodutocarrinho(produtocatalago.id))
         
             }
+
         }
 
 

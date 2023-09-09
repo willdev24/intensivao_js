@@ -36,13 +36,12 @@ botaofecharcarrinho.addEventListener( 'click', exitcarrinho)
 
 function atualizarcarrinho(idproduto){
   
-  document.getElementById(`quantidade-${idproduto}`).innerText = iddosprodutoscarrinho[idproduto]
+  document.getElementById(`quantidade-${idproduto}`)
+  .innerText = iddosprodutoscarrinho[idproduto]
 
-  
-   
 }
 
-function  incrementariddosprodutoscarrinho(idproduto){ //limitar o acrescimo de cartao almentando apenas na quantidade e nao com umm novo cartao igual dentro do carrinho  
+function incrementariddosprodutoscarrinho(idproduto){ //limitar o acrescimo de cartao almentando apenas na quantidade e nao com umm novo cartao igual dentro do carrinho  
   
   iddosprodutoscarrinho[idproduto]++
   
@@ -51,7 +50,8 @@ function  incrementariddosprodutoscarrinho(idproduto){ //limitar o acrescimo de 
 
 function  decrementariddosprodutoscarrinho(idproduto){ // o inverso da funçao assima 
    iddosprodutoscarrinho[idproduto]--
-
+  
+   atualizarcarrinho(idproduto);
 }
 
 
@@ -61,7 +61,7 @@ export function adicionarprodutocarrinho(idproduto){
     incrementariddosprodutoscarrinho(idproduto)
   }else{
 
-  iddosprodutoscarrinho[idproduto] = "1"
+  iddosprodutoscarrinho[idproduto] = 1
 
 const elementclass = document.createElement( "artecle")
 const artecleclass = [
@@ -101,11 +101,11 @@ const cartaoprodutocar = `<article class="shadow-xl shadow-slate-400  group flex
 
 <div class=" flex text-slate-950  absolute bottom-0 right-2 ">
  
-<button > <i class="fa-solid fa-plus"></i> </button>
+<button id="incrementar-produto-${produto.id}" ><i  class="fa-solid fa-plus"></i> </button>
 
-<P id="quantidade-${[produto.id]}" > ${1} </P>
+<P id="quantidade-${produto.id}" class="ml-3" > ${1} </P>
 
-<button > <i class="fa-solid fa-minus ml-3"></i> </button>
+<button id="decrementar-produto-${produto.id}" > <i class="fa-solid fa-minus ml-3"></i> </button>
 
 </div>
 
@@ -113,6 +113,16 @@ const cartaoprodutocar = `<article class="shadow-xl shadow-slate-400  group flex
       
     elementclass.innerHTML = cartaoprodutocar
   containerprodutos.appendChild(elementclass)
+
+
+  
+
+  document.getElementById(`incrementar-produto-${[produto.id]}`)
+          .addEventListener("click", () => incrementariddosprodutoscarrinho([produto.id]))
+
+
+      document.getElementById(`decrementar-produto-${[produto.id]}`)
+        .addEventListener("click", () => decrementariddosprodutoscarrinho([produto.id]))
 }
 }
 
@@ -141,7 +151,22 @@ export function adicionarprodutocarrinho02(idproduto02){
 
   }else{
 
-  iddosprodutoscarrinho02[idproduto02] = '1'
+  iddosprodutoscarrinho02[idproduto02] = 1
+
+  const elementclass = document.createElement( "artecle")
+  const artecleclass = [
+    "shadow-xl", 
+    "shadow-slate-400", 
+    "group", 
+    "flex",
+    "p-1",
+    "bg-cyan-50", 
+    "relative" ,
+    "rounded-lg",
+    " my-2",
+  
+  ];
+  
 
   const produto = catalagotenis.find(p => p.id === idproduto02) 
   const containerprodutos = document.getElementById('produtos-adicionados')
@@ -161,15 +186,29 @@ export function adicionarprodutocarrinho02(idproduto02){
 
   <div class=" flex text-slate-950  absolute bottom-0 right-2 ">
  
-  <button > <i class="fa-solid fa-plus"></i> </button>
+  <button id="incrementar-produto02-${produto.id}" > <i  class="fa-solid fa-plus"></i> </button>
+  
   <P  id="quantidade02-${produto.id}" class=" ml-3 ">${1} </P>
-  <button class" "> <i class="fa-solid fa-minus ml-3"></i> </button>
+  
+  <button id="decrementar-produto02-${produto.id}"> <i class="fa-solid fa-minus ml-3"></i> </button>
  
   </div>
  
   </article>
   `
-   containerprodutos.innerHTML += cartaoprodutocar
+      
+  elementclass.innerHTML = cartaoprodutocar
+  containerprodutos.appendChild(elementclass)
+  
+  
+  document.getElementById(`incrementar-produto02-${[produto.id]}`)
+  .addEventListener("click", () => incrementariddosprodutoscarrinho02([produto.id]))
+
+
+  document.getElementById(`decrementar-produto02-${[produto.id]}`)
+  .addEventListener("click", () => decrementariddosprodutoscarrinho02([produto.id]))
+  
+  
   }
   }
 
