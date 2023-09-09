@@ -40,7 +40,9 @@ function atualizarcarrinho(idproduto){
 
 function removerdocarrinho(idproduto){
 delete iddosprodutoscarrinho[idproduto]
- 
+
+atualizarpreçocarrinho() 
+
 renderizarprodutoscarrinho();
 };
 
@@ -48,6 +50,7 @@ function incrementariddosprodutoscarrinho(idproduto){ //limitar o acrescimo de c
   
   iddosprodutoscarrinho[idproduto]++
   
+  atualizarpreçocarrinho()
   atualizarcarrinho(idproduto);
 };
 
@@ -58,7 +61,7 @@ return
   }
 
   iddosprodutoscarrinho[idproduto]--
-  
+   atualizarpreçocarrinho()
    atualizarcarrinho(idproduto);
 };
  
@@ -142,9 +145,24 @@ export function adicionarprodutocarrinho(idproduto){
   iddosprodutoscarrinho[idproduto] = 1
 
   desenharprodutocarrinho(idproduto)
-
+  atualizarpreçocarrinho()
     }  
 };
+
+
+function atualizarpreçocarrinho(){
+const precocarrinho = document.getElementById("preço-total")
+
+let pretotal = 0;
+
+for (const idsprodutonocarrinho in iddosprodutoscarrinho ){
+pretotal += catalago.find((p) => p.id ===idsprodutonocarrinho).preço *    //catalago.find((p) => p.id ===idsprodutonocarrinho)  isso  aq pega as informaçoes la do ultilidades onde estao os produtos 
+iddosprodutoscarrinho[idsprodutonocarrinho]
+
+} 
+precocarrinho.innerHTML = ` total $ ${pretotal}`
+
+}
 
 
 /*-----------------SOU FOFA, O RESTO É RESTO ----------------------------------------------------*/
