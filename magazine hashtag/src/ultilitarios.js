@@ -1,6 +1,6 @@
 
 
-export const catalago = [ // dados da primeira section que estao dentro do vetor catalago
+export const catalago = [ // dados da section que estao dentro do vetor catalago
     {
     id: "1",
     nome:"casaco branco",
@@ -28,9 +28,8 @@ export const catalago = [ // dados da primeira section que estao dentro do vetor
     marca: 'zara',
     preço: 130,
     nomearquivoimagem: 'moleton02.jpg'
-}]
+},
 
-export const catalagotenis = [ //section 2
 {
     id: "5",
     nome:"tenis",
@@ -60,4 +59,4 @@ export const catalagotenis = [ //section 2
     nomearquivoimagem: 't04.jpg'
 }
 
-]
+];

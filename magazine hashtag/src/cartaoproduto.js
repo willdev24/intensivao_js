@@ -1,6 +1,5 @@
 import { catalago } from "./ultilitarios";
-import { catalagotenis } from "./ultilitarios";
-import { adicionarprodutocarrinho, adicionarprodutocarrinho02 } from "./carrinho_compras";
+import { adicionarprodutocarrinho, } from "./carrinho_compras";
 
 export function redenrizarcatalago(){
     for( const produtocatalago of catalago ){ //section 1, aq o ciclo de repetiçao irar executar tudo que estiver dentro de catalago 
@@ -35,41 +34,9 @@ export function redenrizarcatalago(){
         document.getElementById(`add-${produtocatalago.id}`).addEventListener('click',() => adicionarprodutocarrinho(produtocatalago.id))
         
             }
-
-        }
-
+}
 
 
- export function renderizarcatalago02(){
-        for( const produtocatalago of catalagotenis ){ //coluna 2
-        
-        
-            const cartaoproduto01 = `<div class=' rounded-lg shadow-xl shadow-slate-400 m-[40px] group  just border-solid   w-48 m-4'  id="card-produto- ${produtocatalago.id}">
-            <img src="./midia/${produtocatalago.nomearquivoimagem}" 
-            alt="produto 1 do magazine hashtag"
-            class=" group-hover:scale-110  duration-300 my-3 rounded-lg"
-            />
-            
-            <div class=" px-[3px]">
-            <P class="text-sm">${produtocatalago.marca}</P>
-            <P class="text-sm">${produtocatalago.nome}</P>
-            <P class="text-lime-500  text-sm">$${produtocatalago.preço}</P>
-            </div>
-            <button id="add02-${produtocatalago.id}" class=" rounded-lg bg-emerald-400  m-0.5 px-[60px] text-slate-100  hover:text-sky-600"  > adicionar</button>
-        
-            </div>`;
-            
-            document.getElementById("container-produto01").innerHTML += `${cartaoproduto01}`
-            }
-            
-                 
-        }  
-         
-      export function addcarrinho02(){
 
-            for( const produtocatalago of catalagotenis){
-    
-            document.getElementById(`add02-${produtocatalago.id}`).addEventListener('click', () => adicionarprodutocarrinho02(produtocatalago.id))
-            
-                }
-            }
+
+ 

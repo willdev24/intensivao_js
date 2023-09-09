@@ -15,47 +15,49 @@
 <body>
   
 <!--inicio da section carrinho-->
-  <section  id="carrinhoo" class=" flex flex-col p-5 justify-between bg-cyan-600 fixed top-0 right-[-350px] h-screen w-[340px] text-slate-100 duration-500  border-l  border-slate-100  " >
+<section  id="carrinhoo" class=" flex flex-col p-5 justify-between bg-cyan-600 fixed top-0 right-[-350px] h-screen w-[340px] text-slate-100 duration-500  border-l  border-slate-100  " >
 
-  <div class=" flex justify-between text-slate-100">
-  <p class="text-[25px]">menu carrinho</p>
-  <button id="fecharcarrinho"><i class="fa-solid fa-rectangle-xmark hover:text-slate-800"  ></i></button>
-  </div>
+      <div class=" flex justify-between text-slate-100">
+          <p class="text-[25px]">menu carrinho</p>
+          <button id="fecharcarrinho"><i class="fa-solid fa-rectangle-xmark hover:text-slate-800"  ></i></button>
+      </div>
 
-  <section id="produtos-adicionados" class="h-3/5 overflow-y-auto "> <!--overflow-y-auto serve para criar barra de rolagem no itens adicionados no carrinho-->
-  
-  </section> 
+      <section id="produtos-adicionados" class="h-3/5 overflow-y-auto "> <!--overflow-y-auto serve para criar barra de rolagem no itens adicionados no carrinho-->
+      </section> 
 
-  <p class="" id="preço-total">$200</p>
-  <button class="  duration-300 my-3 bg-emerald-400	p-4 text-[20px] hover:text-slate-400">finalizar compra</button>
+      <p class="" id="preço-total">$200</p>
+      
+      <button class="  duration-300 my-3 bg-emerald-400	p-4 text-[20px] hover:text-slate-400">
+        finalizar compra
+      </button>
   
 </section><!--fim da section carrinho-->
 
     <header class="flex bg-cyan-600  justify-between items-end  "> <!--inicio do cabeçalho da minha ecomerci-->
-    
+       
+      <h1 class=" text-2xl m-8 text-zinc-50 ">magazine Gabs</h1> 
+          <div class="flex m-4 text-zinc-50 text-xl  ">
+              <button class="m-2" id="historico"> 
+                  <i class="fa-solid fa-user hover:text-slate-800" ></i>
+              </button>
       
-        <h1 class=" text-2xl m-8 text-zinc-50 ">magazine Gabs</h1> 
-
-        <div class="flex m-4 text-zinc-50 text-xl  ">
-            <button class="m-2" id="historico"> 
-              <i class="fa-solid fa-user hover:text-slate-800" ></i>
-            </button>
-      
-            <button class="m-2" id="abrircarrinho">
-              <i class="fa-solid fa-cart-shopping hover:text-slate-800"></i>
-           </button> 
-      </div>
-   </header> <!--fimm do cabeçalho da minha ecomerci-->
+                <button class="m-2" id="abrircarrinho">
+                  <i class="fa-solid fa-cart-shopping hover:text-slate-800"></i>
+              </button> 
+         </div>
+     </header> <!--fimm do cabeçalho da minha ecomerci-->
    
- <main class=""> <!--inicio do corpo do programa-->
+<main class=""> <!--inicio do corpo do programa-->
+
   <img class="h-[150px] mx-[10px] fixed top-30 left-0 right-[100]" src="./midia/logomagazine.png" alt="logo da magazine"> 
-      <div class="px-[150px]">
+
+  <div class="px-[150px]">
         <section id="container-produto" class="flex  flex-wrap">  <!-- primeira section de produtos que ta armazenada no main.js-->   
         </section>
         
         <section id="container-produto01" class="flex" ><!-- segunda section de produtos que ta armazenada no main.js-->  
        </section>
-     </div> 
+  </div> 
 
  </main>   
  

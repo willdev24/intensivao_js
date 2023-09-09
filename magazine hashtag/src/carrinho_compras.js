@@ -1,14 +1,11 @@
 
-import { catalago, catalagotenis } from "./ultilitarios"
+import { catalago, } from "./ultilitarios"
 
 //produtos01
 const iddosprodutoscarrinho = { 
 
 }
-//produtos 02
-const iddosprodutoscarrinho02 ={          
 
-}
 
 function opencarrinho(){
     
@@ -31,7 +28,7 @@ const botaofecharcarrinho = document.getElementById("fecharcarrinho")
 
 botaoabrircarrinho.addEventListener(  'click', opencarrinho)
 botaofecharcarrinho.addEventListener( 'click', exitcarrinho)
-}
+};
 
 
 function atualizarcarrinho(idproduto){
@@ -39,30 +36,34 @@ function atualizarcarrinho(idproduto){
   document.getElementById(`quantidade-${idproduto}`)
   .innerText = iddosprodutoscarrinho[idproduto]
 
-}
+};
+
+function removerdocarrinho(idproduto){
+delete iddosprodutoscarrinho[idproduto]
+ 
+renderizarprodutoscarrinho();
+};
 
 function incrementariddosprodutoscarrinho(idproduto){ //limitar o acrescimo de cartao almentando apenas na quantidade e nao com umm novo cartao igual dentro do carrinho  
   
   iddosprodutoscarrinho[idproduto]++
   
   atualizarcarrinho(idproduto);
-}
+};
 
 function  decrementariddosprodutoscarrinho(idproduto){ // o inverso da funçao assima 
-   iddosprodutoscarrinho[idproduto]--
+  if( iddosprodutoscarrinho[idproduto] === 1){
+    removerdocarrinho(idproduto)
+return
+  }
+
+  iddosprodutoscarrinho[idproduto]--
   
    atualizarcarrinho(idproduto);
-}
-
-
-export function adicionarprodutocarrinho(idproduto){
-
-  if(idproduto in iddosprodutoscarrinho){
-    incrementariddosprodutoscarrinho(idproduto)
-  }else{
-
-  iddosprodutoscarrinho[idproduto] = 1
-
+};
+ 
+function desenharprodutocarrinho(idproduto){
+  
 const elementclass = document.createElement( "artecle")
 const artecleclass = [
   "shadow-xl", 
@@ -76,17 +77,13 @@ const artecleclass = [
   " my-2",
 
 ];
-/*
-for( const artclasses of artecleclass ){
-  elementclass.classList.add(artclasses)
-}*/
 
   const produto = catalago.find(p => p.id === idproduto) //vai pegar o produto do catalago pelo id que iremos passar da funçao addcarrinho
 //find = ache um produto p talque  esse produto tenha um id = ao recebido em  idproduto
 const containerprodutos = document.getElementById('produtos-adicionados')
 
 const cartaoprodutocar = `<article class="shadow-xl shadow-slate-400  group flex p-1  bg-cyan-50  relative rounded-lg my-2" >
-<button id="retirarcompra" class="absolute top-0 right-2">
+<button id="retirarcompra-${produto.id}" class="absolute top-0 right-2">
   <i class="fa-solid fa-rectangle-xmark text-slate-800  hover:text-slate-400 "  ></i>
 </button>
 <img class="h-[150px]  " src="./midia/${produto.nomearquivoimagem}" alt="moleton01">
@@ -103,7 +100,7 @@ const cartaoprodutocar = `<article class="shadow-xl shadow-slate-400  group flex
  
 <button id="incrementar-produto-${produto.id}" ><i  class="fa-solid fa-plus"></i> </button>
 
-<P id="quantidade-${produto.id}" class="ml-3" > ${1} </P>
+<P id="quantidade-${produto.id}" class="ml-3" > ${iddosprodutoscarrinho[idproduto]} </P>
 
 <button id="decrementar-produto-${produto.id}" > <i class="fa-solid fa-minus ml-3"></i> </button>
 
@@ -111,116 +108,43 @@ const cartaoprodutocar = `<article class="shadow-xl shadow-slate-400  group flex
 
 </artecle>`
       
-    elementclass.innerHTML = cartaoprodutocar
+  elementclass.innerHTML = cartaoprodutocar
   containerprodutos.appendChild(elementclass)
 
-
-  
-
-  document.getElementById(`incrementar-produto-${[produto.id]}`)
-          .addEventListener("click", () => incrementariddosprodutoscarrinho([produto.id]))
+      document.getElementById(`incrementar-produto-${[produto.id]}`)
+              .addEventListener("click", () => incrementariddosprodutoscarrinho([produto.id]))
 
 
       document.getElementById(`decrementar-produto-${[produto.id]}`)
-        .addEventListener("click", () => decrementariddosprodutoscarrinho([produto.id]))
-}
-}
+              .addEventListener("click", () => decrementariddosprodutoscarrinho([produto.id]))
 
 
-function atualizarcarrinho02(idproduto02){
+      document.getElementById(`retirarcompra-${[produto.id]}`)
+              .addEventListener("click", () => removerdocarrinho([produto.id]))
+};
 
-  document.getElementById(`quantidade02-${idproduto02 }`).innerText = iddosprodutoscarrinho02[idproduto02]
+function renderizarprodutoscarrinho(){
+    const containersprodcarrinho = document.getElementById('produtos-adicionados')
+    containersprodcarrinho.innerHTML = " "
 
-}
+    for (const idproduto in iddosprodutoscarrinho){
+      desenharprodutocarrinho(idproduto)
+    }
+};
 
 
-function  incrementariddosprodutoscarrinho02(idproduto02){
-      iddosprodutoscarrinho02[idproduto02]++
-      atualizarcarrinho02(idproduto02)
-}
+export function adicionarprodutocarrinho(idproduto){
 
-function  decrementariddosprodutoscarrinho02(idproduto02){
-  iddosprodutoscarrinho02[idproduto02]--
-
-}
-
-export function adicionarprodutocarrinho02(idproduto02){
-  if(idproduto02 in iddosprodutoscarrinho02){
-     
-  incrementariddosprodutoscarrinho02(idproduto02)
-
+  if(idproduto in iddosprodutoscarrinho){
+    incrementariddosprodutoscarrinho(idproduto)
   }else{
 
-  iddosprodutoscarrinho02[idproduto02] = 1
+  iddosprodutoscarrinho[idproduto] = 1
 
-  const elementclass = document.createElement( "artecle")
-  const artecleclass = [
-    "shadow-xl", 
-    "shadow-slate-400", 
-    "group", 
-    "flex",
-    "p-1",
-    "bg-cyan-50", 
-    "relative" ,
-    "rounded-lg",
-    " my-2",
-  
-  ];
-  
+  desenharprodutocarrinho(idproduto)
 
-  const produto = catalagotenis.find(p => p.id === idproduto02) 
-  const containerprodutos = document.getElementById('produtos-adicionados')
-  
-  const cartaoprodutocar = ` <article class="shadow-xl shadow-slate-400  group flex p-1  bg-cyan-50  relative rounded-lg my-2" >
-  <button id="retirarcompra" class="absolute top-0 right-2">
-    <i class="fa-solid fa-rectangle-xmark text-slate-800  hover:text-slate-400 "  ></i>
-  </button>
-  <img class="h-[150px]  " src="./midia/${produto.nomearquivoimagem}" alt="moleton01">
-  
-  <div class="p-5 text-slate-800  flex flex-col justify-between " >
-    <p>zara</p>
-    <p>${produto.nome}</p>
-    <P class="text-slate-400">tamanho P</P> 
-    <p class="text-lime-500 h-[15px]">$${produto.preço}</p>
-  </div>    
-
-  <div class=" flex text-slate-950  absolute bottom-0 right-2 ">
- 
-  <button id="incrementar-produto02-${produto.id}" > <i  class="fa-solid fa-plus"></i> </button>
-  
-  <P  id="quantidade02-${produto.id}" class=" ml-3 ">${1} </P>
-  
-  <button id="decrementar-produto02-${produto.id}"> <i class="fa-solid fa-minus ml-3"></i> </button>
- 
-  </div>
- 
-  </article>
-  `
-      
-  elementclass.innerHTML = cartaoprodutocar
-  containerprodutos.appendChild(elementclass)
-  
-  
-  document.getElementById(`incrementar-produto02-${[produto.id]}`)
-  .addEventListener("click", () => incrementariddosprodutoscarrinho02([produto.id]))
+    }  
+};
 
 
-  document.getElementById(`decrementar-produto02-${[produto.id]}`)
-  .addEventListener("click", () => decrementariddosprodutoscarrinho02([produto.id]))
-  
-  
-  }
-  }
-
-/*
-export function iniciaradicao(){
-    for(const quantidade=0 ; quantidade <= catalago.length ; quantidade++  ){
-       
-      const adicionar = document.getElementById('add-product-button')
-          adicionar.addEventListener('click',adicionarprodutocarrinho)
-    }
-    const adicionar02 = document.getElementById('add-product-button')
-
-    adicionar02.addEventListener('click',adicionarprodutocarrinho)
-
-}*/
+/*-----------------SOU FOFA, O RESTO É RESTO ----------------------------------------------------*/
