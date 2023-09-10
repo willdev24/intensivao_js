@@ -6,6 +6,7 @@
 import { redenrizarcatalago } from "./src/cartaoproduto";
 import { inicializarcarrinho, renderizarprodutoscarrinho } from "./src/carrinho_compras"; //importando a function do carrinho para ser executada aq
 import { addcarrinho } from "./src/cartaoproduto";
+import { inicializarfiltro } from "./src/filtros";
 
 
 
@@ -13,4 +14,5 @@ redenrizarcatalago()
 inicializarcarrinho() // executar os comando feito pelo carrinho feito no carrinho_compras 
 renderizarprodutoscarrinho()  
 addcarrinho()   
+inicializarfiltro() 
   
