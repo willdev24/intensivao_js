@@ -6,7 +6,7 @@ export function redenrizarcatalago(){
                                                 // de aordo com a quantidade de cada vetor
                                                 
     // aq foi criado uma const para receber todas essa informaçoes e jogar na tela 
-    const cartaoproduto = `<div class='rounded-lg shadow-xl shadow-slate-400 sl m-[40px] group justify-between just border-solid  w-48 m-4 ' id="card-produto-${produtocatalago.id}"> 
+    const cartaoproduto = `<div class='rounded-lg shadow-xl shadow-slate-400 sl m-[40px] group justify-between just border-solid  w-48 m-4  ${produtocatalago.feminino ? 'feminino':'masculino'}' id="card-produto-${produtocatalago.id}"> 
     
     <img  src="./midia/${produtocatalago.nomearquivoimagem} " 
     alt="produto 1 do magazine hashtag" 
@@ -33,10 +33,9 @@ export function redenrizarcatalago(){
 
         document.getElementById(`add-${produtocatalago.id}`).addEventListener('click',() => adicionarprodutocarrinho(produtocatalago.id))
         
-            }
+}
 }
 
 
 
 
- 

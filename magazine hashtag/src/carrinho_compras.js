@@ -1,10 +1,8 @@
 
-import { catalago, } from "./ultilitarios"
-
+import { catalago, lerlocalstorage, } from "./ultilitarios"
+import { salvarlocalstorage } from "./ultilitarios"
 //produtos01
-const iddosprodutoscarrinho = { 
-
-}
+const iddosprodutoscarrinho = lerlocalstorage("carrinho") ?? {}
 
 
 function opencarrinho(){
@@ -40,16 +38,15 @@ function atualizarcarrinho(idproduto){
 
 function removerdocarrinho(idproduto){
 delete iddosprodutoscarrinho[idproduto]
-
+salvarlocalstorage('carrinho', iddosprodutoscarrinho)
 atualizarpreçocarrinho() 
-
 renderizarprodutoscarrinho();
 };
 
 function incrementariddosprodutoscarrinho(idproduto){ //limitar o acrescimo de cartao almentando apenas na quantidade e nao com umm novo cartao igual dentro do carrinho  
   
   iddosprodutoscarrinho[idproduto]++
-  
+  salvarlocalstorage('carrinho', iddosprodutoscarrinho)
   atualizarpreçocarrinho()
   atualizarcarrinho(idproduto);
 };
@@ -59,9 +56,9 @@ function  decrementariddosprodutoscarrinho(idproduto){ // o inverso da funçao a
     removerdocarrinho(idproduto)
 return
   }
-
   iddosprodutoscarrinho[idproduto]--
-   atualizarpreçocarrinho()
+  salvarlocalstorage('carrinho', iddosprodutoscarrinho)
+  atualizarpreçocarrinho()
    atualizarcarrinho(idproduto);
 };
  
@@ -81,12 +78,12 @@ const artecleclass = [
 
 ];
 
-  const produto = catalago.find(p => p.id === idproduto) //vai pegar o produto do catalago pelo id que iremos passar da funçao addcarrinho
+   const produto = catalago.find(p => p.id === idproduto) //vai pegar o produto do catalago pelo id que iremos passar da funçao addcarrinho
 //find = ache um produto p talque  esse produto tenha um id = ao recebido em  idproduto
 const containerprodutos = document.getElementById('produtos-adicionados')
 
-const cartaoprodutocar = `<article class="shadow-xl shadow-slate-400  group flex p-1  bg-cyan-50  relative rounded-lg my-2" >
-<button id="retirarcompra-${produto.id}" class="absolute top-0 right-2">
+const cartaoprodutocar = `<article class=" select-none shadow-xl shadow-slate-400  group flex p-1  bg-cyan-50  relative rounded-lg my-2" >
+<button id="retirarcompra-${produto.id}" class="absolute top-0 right-2 select-none">
   <i class="fa-solid fa-rectangle-xmark text-slate-800  hover:text-slate-400 "  ></i>
 </button>
 <img class="h-[150px]  " src="./midia/${produto.nomearquivoimagem}" alt="moleton01">
@@ -126,7 +123,7 @@ const cartaoprodutocar = `<article class="shadow-xl shadow-slate-400  group flex
               .addEventListener("click", () => removerdocarrinho([produto.id]))
 };
 
-function renderizarprodutoscarrinho(){
+export function renderizarprodutoscarrinho(){
     const containersprodcarrinho = document.getElementById('produtos-adicionados')
     containersprodcarrinho.innerHTML = " "
 
@@ -143,7 +140,7 @@ export function adicionarprodutocarrinho(idproduto){
   }else{
 
   iddosprodutoscarrinho[idproduto] = 1
-
+  salvarlocalstorage('carrinho', iddosprodutoscarrinho)
   desenharprodutocarrinho(idproduto)
   atualizarpreçocarrinho()
     }  

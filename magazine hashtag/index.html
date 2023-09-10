@@ -25,7 +25,7 @@
       <section id="produtos-adicionados" class="h-3/5 overflow-y-auto "> <!--overflow-y-auto serve para criar barra de rolagem no itens adicionados no carrinho-->
       </section> 
 
-      <p  class=" duration-300 bg-slate-200 text-lime-600 p-1 text-[20px] hover:text-red-800"  id="preço-total">total $200</p>
+      <p  class=" duration-300 bg-slate-200 text-lime-600 p-1 text-[20px] hover:text-red-800 select-none"  id="preço-total">total $</p>
       
       <button class="  duration-300 my-3 bg-emerald-400	p-4 text-[20px] hover:text-red-800">
         finalizar compra
@@ -35,7 +35,7 @@
 
     <header class="flex bg-cyan-600  justify-between items-end  "> <!--inicio do cabeçalho da minha ecomerci-->
        
-      <h1 class=" text-2xl m-8 text-zinc-50 ">magazine Gabs</h1> 
+      <h1 class=" text-2xl m-8 text-zinc-50 select-none ">magazine Gabs</h1> 
           <div class="flex m-4 text-zinc-50 text-xl  ">
               <button class="m-2" id="historico"> 
                   <i class="fa-solid fa-user hover:text-slate-800" ></i>
@@ -47,16 +47,30 @@
          </div>
      </header> <!--fimm do cabeçalho da minha ecomerci-->
    
-<main class=""> <!--inicio do corpo do programa-->
+<main class=" flex flex-col items-center"> <!--inicio do corpo do programa-->
+<section class="p-10 flex "  >
+  <div>
+    <input id="exibir-todos" type="radio" name="sexo" class="peer hidden  " checked />  
+    <label for="exibir-todos" class=" peer-checked:bg-cyan-600 peer-checked:text-slate-100 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer "> todos </label>  
+  </div>
+  
+<div class="ml-3">  
+  <input id="exibir-masculino" type="radio"  name="sexo" class="peer hidden">
+  <label for="exibir-masculino" class=" peer-checked:bg-cyan-600 peer-checked:text-slate-100 peer-checked:font-bold p-2 rounded-xl  select-none cursor-pointer"> masculino </label>
+</div>
+
+<div  class="ml-3">
+  <input id="exibir-feminino" type="radio" name="sexo" class="peer  hidden">
+  <label for="exibir-feminino" class=" peer-checked:bg-cyan-600 peer-checked:text-slate-100 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer"> feminino </label>  
+</div>
+
+</section>
 
   <img class="h-[150px] mx-[10px] fixed top-30 left-0 right-[100]" src="./midia/logomagazine.png" alt="logo da magazine"> 
 
   <div class="px-[150px]">
-        <section id="container-produto" class="flex  flex-wrap">  <!-- primeira section de produtos que ta armazenada no main.js-->   
+        <section id="container-produto" class="flex  flex-wrap select-none">  <!-- primeira section de produtos que ta armazenada no main.js-->   
         </section>
-        
-        <section id="container-produto01" class="flex" ><!-- segunda section de produtos que ta armazenada no main.js-->  
-       </section>
   </div> 
 
  </main>   
