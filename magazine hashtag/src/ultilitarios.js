@@ -78,7 +78,12 @@ localStorage.setItem(chave, JSON.stringify(informacao));
 
 export function lerlocalstorage(chave){
     return JSON.parse(localStorage.getItem(chave))
-}     
+}   
+
+export function apagarlocalstorage(chave){
+localStorage.removeItem(chave)    
+
+}
 
 
   export function desenharprodutosimples(idproduto, idcontainer, quantidadeproduto){
@@ -102,10 +107,10 @@ export function lerlocalstorage(chave){
   ];
   
   const cartaoprodutocar = 
-  `<article class=" select-none shadow-xl shadow-slate-400  group flex p-1  bg-cyan-50  relative rounded-lg my-2" >
-    <img class="h-[150px]  " src="./midia/${produto.nomearquivoimagem}" alt="moleton01">
+  `<article class=" select-none shadow-xl shadow-slate-400  group flex h-[100px] bg-cyan-50  relative rounded-lg my-2" >
+    <img class="h-[100px]  " src="./midia/${produto.nomearquivoimagem}" alt="moleton01">
     
-    <div class="p-5 text-slate-800  flex flex-col justify-between" >
+    <div class="p-5 text-slate-800  flex flex-col  mt-[-22px]" >
         <p>zara</p>
         <p>${produto.nome}</p>
         <P class="text-slate-400">tamanho P</P> 

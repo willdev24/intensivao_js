@@ -2,7 +2,7 @@
 import { catalago, lerlocalstorage, } from "./ultilitarios"
 import { salvarlocalstorage } from "./ultilitarios"
 //produtos01
-const iddosprodutoscarrinho = lerlocalstorage("carrinho") ?? {}
+const iddosprodutoscarrinho = lerlocalstorage("carrinho") ?? {} //biblioteca
 
 
 function opencarrinho(){
@@ -19,13 +19,26 @@ function opencarrinho(){
 
 }
 
+function irparacheckout(){
+
+if(Object.keys(iddosprodutoscarrinho).length === 0){
+
+  return;
+}
+window.location.href = window.location.origin + "/checkout.html"
+};
+
+
+
 export function inicializarcarrinho(){
 
 const botaoabrircarrinho = document.getElementById("abrircarrinho")
 const botaofecharcarrinho = document.getElementById("fecharcarrinho")
+const botaoirparacheckout = document.getElementById( "irparacheckout")
 
 botaoabrircarrinho.addEventListener(  'click', opencarrinho)
 botaofecharcarrinho.addEventListener( 'click', exitcarrinho)
+botaoirparacheckout.addEventListener( "click", irparacheckout)
 };
 
 
